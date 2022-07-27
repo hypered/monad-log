@@ -306,8 +306,6 @@ instance Monad m => Monad (LogT env m) where
         let LogT f' = f a
         f' lgr
     {-# INLINE (>>=) #-}
-    fail msg = lift (fail msg)
-    {-# INLINE fail #-}
 
 #if MIN_VERSION_base(4,9,0)
 instance Fail.MonadFail m => Fail.MonadFail (LogT env m) where
